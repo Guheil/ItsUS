@@ -302,26 +302,32 @@ nav {
 
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row on larger screens */
     gap: 20px;
 }
 
 .photo-item {
     position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* Creates a square aspect ratio */
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 
-.photo-item img {
+.photo-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
     transition: transform 0.3s ease;
 }
 
-.photo-item:hover img {
+.photo-item:hover .photo-thumbnail {
     transform: scale(1.1);
 }
 
@@ -532,6 +538,22 @@ nav {
     .story-text, .story-image {
         width: 100%;
     }
+
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on medium screens */
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row on mobile screens */
+        gap: 10px;
+    }
+
+    .date-item img {
+        height: 200px; /* Smaller height for mobile devices */
+    }
 }
 
 @keyframes pulse {
@@ -741,33 +763,90 @@ img {
 }
 
 /* Special Dates section */
+.special-dates {
+    background-color: var(--light-blue);
+}
+
+.date-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+}
+
 .date-item img {
     width: 100%;
-    height: 300px; /* Adjust this value as needed */
+    height: 300px;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.date-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(74, 144, 226, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.date-item:hover .date-overlay {
+    opacity: 1;
+}
+
+.date-item:hover img {
+    transform: scale(1.1);
+}
+
+.date-overlay h3 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.date-overlay p {
+    color: white;
+    text-align: center;
+    padding: 0 20px;
 }
 
 /* Media queries for responsive design */
 @media screen and (max-width: 768px) {
-    .story-content {
-        flex-direction: column;
+    .date-item img {
+        height: 300px; /* Slightly reduced height for medium screens */
     }
 
-    .story-text, .story-image {
-        width: 100%;
+    .date-overlay h3 {
+        font-size: 24px;
     }
 
-    .photo-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .date-overlay p {
+        font-size: 14px;
     }
 }
 
-@media screen and (max-width: 480px) {
-    .photo-grid {
-        grid-template-columns: 1fr;
+@media screen and (max-width: 576px) {
+    .date-item {
+        margin: 0 5px; /* Reduced margin for mobile */
     }
 
     .date-item img {
-        height: 200px; /* Smaller height for mobile devices */
+        height: 300px; /* Further reduced height for mobile screens */
+    }
+
+    .date-overlay h3 {
+        font-size: 20px;
+    }
+
+    .date-overlay p {
+        font-size: 12px;
+        padding: 0 10px;
     }
 }
