@@ -134,3 +134,15 @@ function toggleFullscreen() {
         document.exitFullscreen();
     }
 }
+
+// Function to play background audio
+function playBackgroundAudio() {
+    const audio = document.getElementById("background-audio");
+    audio.volume = 0.2; // Set volume to 10% (adjust as needed)
+    audio.play();
+}
+
+// Call the function when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function() {
+    playBackgroundAudio();
+});
