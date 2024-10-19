@@ -853,3 +853,56 @@ img {
         padding: 0 10px;
     }
 }
+
+.love-letters {
+    padding: 100px 0;
+    background-color: var(--lighter-blue);
+}
+
+.letter-block {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fefefe; /* Light paper color */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* For sparkle animation */
+    overflow: hidden; /* To hide the sparkle */
+    font-family: 'Patrick Hand', cursive; /* Handwritten font for a romantic feel */
+    line-height: 1.6; /* Better line spacing */
+    opacity: 1; /* Ensure it's visible */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+}
+
+.letter-block h3 {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.letter-block p {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.author {
+    display: block; /* Make the author's name a block element */
+    margin-top: 10px; /* Space above the author's name */
+    font-size: 16px; /* Font size for the author's name */
+    color: var(--secondary-color); /* Color for the author's name */
+    font-style: italic; /* Italic style for the author's name */
+}
+
+.date {
+    position: absolute; /* Position it absolutely */
+    right: 20px; /* Distance from the right */
+    bottom: 20px; /* Distance from the bottom */
+    font-size: 14px; /* Font size for the date */
+    color: var(--text-color); /* Color for the date */
+    font-style: italic; /* Italic style for the date */
+}
+
+
+
+
+
