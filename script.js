@@ -138,7 +138,7 @@ function toggleFullscreen() {
 // Function to play background audio
 function playBackgroundAudio() {
     const audio = document.getElementById("background-audio");
-    audio.volume = 0.2; // Set volume to 10% (adjust as needed)
+    audio.volume = 0.199; // Set volume to 10% (adjust as needed)
     audio.play();
 }
 
