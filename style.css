@@ -452,7 +452,7 @@ nav {
     top: 15px; /* Position it at the top */
     right: 15px; /* Position it at the right */
     color: #f1f1f1;
-    font-size: 40px;
+    font-size: 30px; /* Adjust size to match the fullscreen button */
     font-weight: bold;
     transition: 0.3s;
     z-index: 1001; /* Ensure it is above the modal content */
@@ -903,7 +903,20 @@ img {
     font-style: italic; /* Italic style for the date */
 }
 
+.fullscreen-btn {
+    position: absolute;
+    top: 60px; /* Position it below the close button */
+    right: 15px; /* Keep it aligned to the right */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border: none;
+    border-radius: 5px;
+    padding: 2px; /* Adjust padding for a smaller button */
+    cursor: pointer;
+    font-size: 10px; /* Adjust size to match the close button */
+    z-index: 1001; /* Ensure it is above the modal content */
+    transition: background-color 0.3s ease;
+}
 
-
-
-
+.fullscreen-btn:hover {
+    background-color: rgba(255, 255, 255, 1); /* Change background on hover */
+}

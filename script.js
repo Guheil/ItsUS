@@ -122,3 +122,15 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.style.opacity = '1';
     }, 600); // Adjust this value to control how long the animation plays
 });
+
+// Function to toggle fullscreen mode
+function toggleFullscreen() {
+    const modalImg = document.getElementById("modalImg");
+    if (!document.fullscreenElement) {
+        modalImg.requestFullscreen().catch(err => {
+            console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+        });
+    } else {
+        document.exitFullscreen();
+    }
+}
