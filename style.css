@@ -920,3 +920,29 @@ img {
 .fullscreen-btn:hover {
     background-color: rgba(255, 255, 255, 1); /* Change background on hover */
 }
+
+/* Custom Scrollbar Styles for Webkit Browsers */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    height: 12px; /* Height of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background of the scrollbar track */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color); /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color); /* Color of the thumb on hover */
+}
+
+/* Custom Scrollbar Styles for Firefox */
+* {
+    scrollbar-width: thin; /* Use a thin scrollbar */
+    scrollbar-color: var(--primary-color) #f1f1f1; /* Thumb color and track color */
+}
